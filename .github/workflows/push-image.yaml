@@ -24,7 +24,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: ${{ github.actor }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          password: ${{ secrets.DCHK_TOKEN }}
           
       - name: Build and push
         uses: docker/build-push-action@v3
