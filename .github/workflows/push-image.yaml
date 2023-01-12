@@ -46,3 +46,15 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/frame0310/08.docker-compose:${{ github.run_number }}
+      
+
+
+      - name: slack Notification
+        uses: rtCamp/action-slack-notify@v2 
+        env:
+          SLACK_CHANNEL: github_notifications
+          SLACK_TITLE: 'PUSH IMAGE'
+          LACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_MESSAGE: 'Image has been pushed to registry'
+          SLACK_USERNAME: ntBot
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
