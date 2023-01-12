@@ -54,8 +54,6 @@ jobs:
           SLACK_TITLE: 'PUSH IMAGE'
           SLACK_COLOR: ${{ job.status }}
           LACK_ICON: https://github.com/rtCamp.png?size=48
-          SLACK_MESSAGE: |
-            'Images have been pushed to registry'
-            '${{ env.IMAGE_NAME }} with version ${{  github.ref_name }}'
+          SLACK_MESSAGE: 'Images have been pushed to registrym. IMAGE: ${{ github.repository }} version ${{ github.run_number }}'
           SLACK_USERNAME: ntBot
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
